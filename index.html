@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T26 · Centralised AI &amp; Data Analytics Platforms — CSSA Role Brief</title>
+<meta name="description" content="Role brief for T26, a Contract Systems Analyst supporting and operating centralised AI and data analytics platforms — Chatbot-as-a-Service and the Social Media Text Analytics System — for Government bureaux and departments." />
+<meta name="color-scheme" content="dark light" />
+<meta property="og:title" content="T26 · Centralised AI &amp; Data Analytics Platforms" />
+<meta property="og:description" content="A support and operations role across Chatbot-as-a-Service and Social Media Text Analytics — design, implementation, testing, maintenance and B/D adoption." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1220'/%3E%3Cpath d='M8 20.5 16 8l8 12.5' stroke='%232dd4bf' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='23' r='2.2' fill='%23f5c97b'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-6.2A8 8 0 0 1 11 4h2a8 8 0 0 1 8 8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 11h7M8.5 14.5h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V6M4 20h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 17v-4M12 17V9M16 17v-6M20 17v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 12 2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6.1M17.5 14.9c1.9.6 3.2 2.3 3.2 4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5V4.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19.5A1.5 1.5 0 0 1 6.5 18H19v3H6.5A1.5 1.5 0 0 1 5 19.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 7.5h6M8.5 11h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 5 13.5h5L9.5 22 19 10h-5.5L13 2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 8 4.5-8 4.5-8-4.5L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m4 12 8 4.5 8-4.5M4 16.5 12 21l8-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6a3.5 3.5 0 1 0 4.2 4.6l-1.9 1.9 3.2 3.2-2.6 2.6-3.2-3.2-1.9 1.9A3.5 3.5 0 0 1 6 12.4l3-3a3.5 3.5 0 0 1 5.5-3.4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 6.9 6.3 15.9M13.4 6.9l4.3 9M7.4 18h9.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13 3v6h6M8.5 13h7M8.5 16.5h4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3.5h10V9M7 18H5.5A1.5 1.5 0 0 1 4 16.5v-5A1.5 1.5 0 0 1 5.5 10h13A1.5 1.5 0 0 1 20 11.5v5a1.5 1.5 0 0 1-1.5 1.5H17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect x="7" y="14" width="10" height="6.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="T26 role brief — home">
+      <span class="brand-mark" aria-hidden="true">T26</span>
+      <span class="brand-text">
+        <strong>Centralised AI &amp; Data Analytics</strong>
+        <span>Contract Systems Analyst · role brief</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#responsibilities">Scope</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#operations">Operations</a>
+      <a href="#governance">Governance</a>
+      <a href="#performance">Metrics</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme" aria-pressed="false">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+      </button>
+      <button class="btn btn-ghost hide-sm" type="button" id="printBtn">
+        <svg class="icon" aria-hidden="true"><use href="#i-print" /></svg>
+        <span>Print brief</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══════════════ OVERVIEW ═══════════════ -->
+  <section class="hero" id="overview">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> T26 · Contract Systems Analyst (CSSA)</p>
+        <h1>Operating the Government's shared AI and analytics platforms.</h1>
+        <p class="lede">
+          A support and operations role spanning <strong>Chatbot-as-a-Service</strong> and the
+          <strong>Social Media Text Analytics System</strong> — from design, implementation and testing through to
+          maintenance, administration and adoption across bureaux and departments.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#platforms">
+            Explore the platforms
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </a>
+          <a class="btn btn-ghost" href="#requirements">View requirements</a>
+        </div>
+
+        <dl class="hero-facts">
+          <div><dt>Experience floor</dt><dd><span data-count="3">3</span>+ years<span class="unit">across four bands</span></dd></div>
+          <div><dt>Platforms in scope</dt><dd><span data-count="2">2</span> centralised services</dd></div>
+          <div><dt>Operating mode</dt><dd>B/D-wide · after-hours cover</dd></div>
+        </dl>
+      </div>
+
+      <aside class="hero-panel" aria-label="Role at a glance">
+        <div class="panel-head">
+          <span class="panel-title">Role at a glance</span>
+          <span class="pill pill-live"><span class="dot"></span> Brief T26</span>
+        </div>
+        <ul class="panel-list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg><div><strong>Build &amp; run</strong><span>Design, implement, test, maintain, administer</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg><div><strong>Drive adoption</strong><span>Promote, onboard and support B/Ds</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-network" /></svg><div><strong>Coordinate</strong><span>Contractors, internal teams, consultants, B/Ds</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg><div><strong>Research</strong><span>Gen AI and analytics market watch</span></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-bolt" /></svg><div><strong>Resilience</strong><span>Special events, fire-fighting, urgent deployment</span></div></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="shell">
+      <div class="success-grid">
+        <article class="success-card">
+          <svg class="icon" aria-hidden="true"><use href="#i-target" /></svg>
+          <h3>Platform reliability</h3>
+          <p>Services stay available, patched and observable, with incidents triaged inside agreed response windows.</p>
+        </article>
+        <article class="success-card">
+          <svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>
+          <h3>Adoption depth</h3>
+          <p>B/Ds move from awareness to live use — onboarding, training and support that survive contact with real workloads.</p>
+        </article>
+        <article class="success-card">
+          <svg class="icon" aria-hidden="true"><use href="#i-wrench" /></svg>
+          <h3>Delivery control</h3>
+          <p>Vendors and internal teams deliver against milestones, with decisions and records that stand up to audit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PLATFORMS ═══════════════ -->
+  <section class="section" id="platforms">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">01 — Platform portfolio</p>
+          <h2>Two centralised services, one operating standard.</h2>
+        </div>
+        <p class="section-note">
+          Both platforms are shared infrastructure: the same support discipline, change control and reporting
+          applied to conversational AI and to social text analytics.
+        </p>
+      </header>
+
+      <div class="platform-grid">
+        <article class="card platform reveal">
+          <div class="card-top">
+            <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></span>
+            <span class="pill">Conversational AI</span>
+          </div>
+          <h3>Chatbot-as-a-Service</h3>
+          <p class="card-lede">
+            A multi-tenant platform that lets bureaux and departments publish governed assistants over their own
+            service content, without building a conversational stack each time.
+          </p>
+          <ul class="cap-list">
+            <li>Intent, entity and dialogue design with versioned configuration</li>
+            <li>Retrieval-augmented answers over curated, approved corpora</li>
+            <li>Bilingual delivery — Traditional Chinese and English</li>
+            <li>Guardrails, escalation to human channels, and refusal handling</li>
+            <li>Channel connectors: web, kiosk and messaging surfaces</li>
+            <li>Conversation analytics, containment and satisfaction reporting</li>
+          </ul>
+          <div class="metric-row">
+            <div class="metric"><span class="metric-val">≥ 70%</span><span class="metric-label">Containment target</span></div>
+            <div class="metric"><span class="metric-val">99.5%</span><span class="metric-label">Availability target</span></div>
+            <div class="metric"><span class="metric-val">≤ 20<small>d</small></span><span class="metric-label">Onboarding lead time</span></div>
+          </div>
+        </article>
+
+        <article class="card platform reveal">
+          <div class="card-top">
+            <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg></span>
+            <span class="pill">Text analytics</span>
+          </div>
+          <h3>Social Media Text Analytics System</h3>
+          <p class="card-lede">
+            Social listening and text analytics that turn public conversation into signal — sentiment, emerging
+            topics and issue detection for policy and service teams.
+          </p>
+          <ul class="cap-list">
+            <li>Ingestion, normalisation and near-duplicate suppression</li>
+            <li>Sentiment and emotion classification with confidence scoring</li>
+            <li>Topic and trend detection over rolling windows</li>
+            <li>Entity, organisation and location extraction</li>
+            <li>Alerting on emerging issues and volume anomalies</li>
+            <li>Dashboards, scheduled briefs and data exports</li>
+          </ul>
+          <div class="metric-row">
+            <div class="metric"><span class="metric-val">0.82</span><span class="metric-label">Model F1 floor</span></div>
+            <div class="metric"><span class="metric-val">≤ 15<small>m</small></span><span class="metric-label">Alert latency</span></div>
+            <div class="metric"><span class="metric-val">Daily</span><span class="metric-label">Refresh cadence</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="adoption">
+        <h3 class="adoption-title">Adoption path — what “arrange adoption” actually means</h3>
+        <ol class="adoption-track">
+          <li><span class="step">01</span><strong>Assess</strong><p>Understand the B/D service, volume and content readiness.</p></li>
+          <li><span class="step">02</span><strong>Pilot</strong><p>Scoped assistant or analytics feed with success measures agreed up front.</p></li>
+          <li><span class="step">03</span><strong>Onboard</strong><p>Tenancy, content ingestion, access roles, training and runbook handover.</p></li>
+          <li><span class="step">04</span><strong>Scale</strong><p>Widen channels and use cases; tune prompts, taxonomies and alerts.</p></li>
+          <li><span class="step">05</span><strong>Sustain</strong><p>Service reviews, usage reporting and continuous improvement backlog.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESPONSIBILITIES ═══════════════ -->
+  <section class="section alt" id="responsibilities">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">02 — Scope of work</p>
+          <h2>Seven duties, six operating pillars.</h2>
+        </div>
+        <p class="section-note">
+          The brief describes a role that sits between engineering, service management and the business — close
+          enough to the platforms to fix them, close enough to B/Ds to make them usable.
+        </p>
+      </header>
+
+      <div class="pillar-grid">
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg></span>
+          <h3>Build &amp; run</h3>
+          <p>Support design, implementation, testing, maintenance and administration of the centralised AI and analytics platforms.</p>
+          <ul class="mini-list">
+            <li>Release and regression testing before change windows</li>
+            <li>Configuration, prompt and taxonomy version control</li>
+            <li>Health monitoring, patching and capacity checks</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg></span>
+          <h3>Adoption &amp; enablement</h3>
+          <p>Promote the platforms, arrange adoption and provide technical and user support to government B/Ds.</p>
+          <ul class="mini-list">
+            <li>Briefings, demos and onboarding sessions</li>
+            <li>User support, triage and knowledge articles</li>
+            <li>Usage reporting back to service owners</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-network" /></svg></span>
+          <h3>Coordination</h3>
+          <p>Keep contractors, internal teams, consulting teams and B/Ds aligned so information flows without gaps.</p>
+          <ul class="mini-list">
+            <li>Single point of contact for delivery questions</li>
+            <li>Action logs, decisions and escalation paths</li>
+            <li>Handover packs between teams and shifts</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg></span>
+          <h3>Research &amp; insight</h3>
+          <p>Conduct market research and analysis on Gen AI and data analytics developments relevant to government use.</p>
+          <ul class="mini-list">
+            <li>Vendor and model landscape scanning</li>
+            <li>Evaluation criteria, risks and guardrail practice</li>
+            <li>Short written briefs for decision makers</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-file" /></svg></span>
+          <h3>Records &amp; knowledge</h3>
+          <p>Maintain electronic and physical files so documents stay current, accurately recorded and easy to find.</p>
+          <ul class="mini-list">
+            <li>Folder structures, naming and version discipline</li>
+            <li>Retention, access and disposal aligned to policy</li>
+            <li>Runbooks and decision records kept current</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <span class="pillar-icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt" /></svg></span>
+          <h3>Resilience</h3>
+          <p>Provide technical and administrative support outside normal hours for special events, fire-fighting and urgent deployment.</p>
+          <ul class="mini-list">
+            <li>On-call rota and escalation contacts</li>
+            <li>Pre-event readiness checks and rehearsals</li>
+            <li>Incident logging and post-incident review</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="callout">
+        <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
+        <div>
+          <strong>After-hours cover is part of the role.</strong>
+          <p>
+            Special events, urgent service deployments and live incidents can require support outside office hours.
+            The expectation is not permanent availability, but a rehearsed, documented response when the call comes —
+            and a clean handover back to the normal rota afterwards.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════════════ REQUIREMENTS ═══════════════ -->
+  <section class="section" id="requirements">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">03 — Requirements</p>
+          <h2>What the position asks for — and how it shows up in the work.</h2>
+        </div>
+        <p class="section-note">
+          Six behavioural requirements and four experience bands, each with the evidence a hiring panel would
+          realistically look for.
+        </p>
+      </header>
+
+      <div class="req-grid">
+        <article class="req reveal">
+          <span class="req-num">01</span>
+          <h3>Government systems &amp; platforms</h3>
+          <p>Knowledge and experience managing and supporting government systems or platforms.</p>
+          <p class="evidence"><span>Evidence</span> Change control, security compliance, service continuity and documented operations for a live government service.</p>
+        </article>
+        <article class="req reveal">
+          <span class="req-num">02</span>
+          <h3>AI project support</h3>
+          <p>Knowledge and experience supporting AI-related projects.</p>
+          <p class="evidence"><span>Evidence</span> Model lifecycle awareness, evaluation and guardrails, prompt or taxonomy iteration, handling of model-driven incidents.</p>
+        </article>
+        <article class="req reveal">
+          <span class="req-num">03</span>
+          <h3>Analytical &amp; problem solving</h3>
+          <p>A strong sense of analytical and problem solving skill.</p>
+          <p class="evidence"><span>Evidence</span> Structured triage, root-cause analysis and options papers that separate symptom from cause.</p>
+        </article>
+        <article class="req reveal">
+          <span class="req-num">04</span>
+          <h3>Communication &amp; interpersonal</h3>
+          <p>Good communication and interpersonal skills.</p>
+          <p class="evidence"><span>Evidence</span> B/D briefings, vendor negotiation and written updates that non-specialists can act on.</p>
+        </article>
+        <article class="req reveal">
+          <span class="req-num">05</span>
+          <h3>Diligence &amp; self-motivation</h3>
+          <p>Hard working and self-motivated with good working attitudes.</p>
+          <p class="evidence"><span>Evidence</span> Ownership of the after-hours rota, follow-through on open actions, no dropped handovers.</p>
+        </article>
+        <article class="req reveal">
+          <span class="req-num">06</span>
+          <h3>Independent working</h3>
+          <p>Can work independently.</p>
+          <p class="evidence"><span>Evidence</span> Decisions taken and recorded without supervision, with escalation used deliberately rather than avoided.</p>
+        </article>
+      </div>
+
+      <div class="skills">
+        <div class="skills-head">
+          <h3>Experience bands</h3>
+          <div class="legend">
+            <span><i class="sw sw-tech"></i> Technical</span>
+            <span><i class="sw sw-non"></i> Non-technical</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table skill-table">
+            <caption class="sr-only">Required experience bands for the T26 position</caption>
+            <thead>
+              <tr><th scope="col">Category</th><th scope="col">Requirement</th><th scope="col">Minimum</th><th scope="col">Depth</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag tag-tech">Technical</span></td>
+                <td>IT application development and management</td>
+                <td class="num">3+ years</td>
+                <td><div class="bar"><span style="--v:62%"></span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-tech">Technical</span></td>
+                <td>System implementation and maintenance / support</td>
+                <td class="num">3+ years</td>
+                <td><div class="bar"><span style="--v:74%"></span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-non">Non-technical</span></td>
+                <td>Management and support of government systems &amp; services</td>
+                <td class="num">3+ years</td>
+                <td><div class="bar"><span style="--v:80%"></span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-non">Non-technical</span></td>
+                <td>Vendor management</td>
+                <td class="num">3+ years</td>
+                <td><div class="bar"><span style="--v:58%"></span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="footnote">
+          Minimum bands are stated in the source brief. The depth indicator is a reading aid showing the relative
+          mix of the four bands in day-to-day work, not an additional eligibility rule.
+        </p>
+      </div>
+
+      <div class="selfcheck" id="selfcheck">
+        <div class="sc-head">
+          <div>
+            <h3>Self-check against the brief</h3>
+            <p>Tick what you can evidence today. Nothing is submitted anywhere — this runs entirely in your browser.</p>
+          </div>
+          <div class="sc-readout">
+            <span class="sc-count"><b id="scCount">0</b><span>/6</span></span>
+            <span class="sc-verdict" id="scVerdict" aria-live="polite">Criteria met</span>
+          </div>
+        </div>
+
+        <ul class="sc-list">
+          <li><label><input type="checkbox" data-check /><span><strong>3+ years</strong> IT application development and management</span></label></li>
+          <li><label><input type="checkbox" data-check /><span><strong>3+ years</strong> system implementation, maintenance and support</span></label></li>
+          <li><label><input type="checkbox" data-check /><span><strong>3+ years</strong> management and support of government systems and services</span></label></li>
+          <li><label><input type="checkbox" data-check /><span><strong>3+ years</strong> vendor management</span></label></li>
+          <li><label><input type="checkbox" data-check /><span>Supported an AI-related project through delivery or operations</span></label></li>
+          <li><label><input type="checkbox" data-check /><span>Coordinated contractors, consultants and B/Ds on a live service</span></label></li>
+        </ul>
+
+        <div class="sc-bar" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" aria-label="Criteria met" id="scBarWrap">
+          <span id="scBar"></span>
+        </div>
+        <p class="sc-hint" id="scHint">Select the criteria you can evidence to see how you compare with the brief.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ OPERATIONS ═══════════════ -->
+  <section class="section alt" id="operations">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">04 — Operating model</p>
+          <h2>How the platforms are actually run.</h2>
+        </div>
+        <p class="section-note">
+          Three support tiers, severity-based response windows, and a cadence that keeps B/Ds, vendors and internal
+          teams looking at the same numbers.
+        </p>
+      </header>
+
+      <div class="tier-grid">
+        <article class="tier reveal">
+          <span class="tier-tag">L1</span>
+          <h3>Service desk</h3>
+          <p>First contact for B/D users. Access requests, how-to questions, known issues and ticket hygiene.</p>
+          <ul class="mini-list"><li>Ticket logging and classification</li><li>Known-error and knowledge base</li><li>Escalation to L2 with evidence</li></ul>
+        </article>
+        <article class="tier reveal">
+          <span class="tier-tag">L2</span>
+          <h3>Platform team <em>(this role)</em></h3>
+          <p>Configuration, content, data and model issues. Diagnosis across platform, tenancy and integration.</p>
+          <ul class="mini-list"><li>Root-cause analysis and workarounds</li><li>Configuration and prompt changes</li><li>Vendor escalation with reproduction</li></ul>
+        </article>
+        <article class="tier reveal">
+          <span class="tier-tag">L3</span>
+          <h3>Vendor engineering</h3>
+          <p>Product defects, model or infrastructure faults, and fixes that require source-level change.</p>
+          <ul class="mini-list"><li>Defect reproduction and fixes</li><li>Patch and upgrade delivery</li><li>Contractual SLA accountability</li></ul>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table sla-table">
+          <caption class="sr-only">Target service levels by severity</caption>
+          <thead>
+            <tr>
+              <th scope="col">Severity</th><th scope="col">Definition</th>
+              <th scope="col">Response</th><th scope="col">Workaround</th><th scope="col">Resolution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="sev sev1">S1</span></td><td>Platform unavailable or data exposure risk</td><td class="num">15 min</td><td class="num">2 h</td><td class="num">1 business day</td></tr>
+            <tr><td><span class="sev sev2">S2</span></td><td>Degraded service for multiple B/Ds</td><td class="num">1 h</td><td class="num">4 h</td><td class="num">3 business days</td></tr>
+            <tr><td><span class="sev sev3">S3</span></td><td>Single B/D or single workflow affected</td><td class="num">4 h</td><td class="num">1 business day</td><td class="num">10 business days</td></tr>
+            <tr><td><span class="sev sev4">S4</span></td><td>Request, question or enhancement</td><td class="num">2 business days</td><td class="num">—</td><td class="num">Change calendar</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Targets shown are the operating standard the role is measured against; they are not published service commitments.</p>
+
+      <div class="cadence">
+        <h3>Operating cadence</h3>
+        <ol class="timeline">
+          <li><span class="when">Daily</span><strong>Health check</strong><p>Availability, error rates, queue depth, ingestion lag and open S1/S2 tickets.</p></li>
+          <li><span class="when">Weekly</span><strong>Change &amp; release board</strong><p>Approve configuration, prompt and taxonomy changes; confirm rollback plans.</p></li>
+          <li><span class="when">Monthly</span><strong>Service review with B/Ds</strong><p>Usage, containment, sentiment coverage, incidents and the improvement backlog.</p></li>
+          <li><span class="when">Quarterly</span><strong>Performance &amp; vendor review</strong><p>Platform performance report, SLA attainment and roadmap alignment.</p></li>
+          <li><span class="when">Annually</span><strong>Security &amp; records review</strong><p>Access recertification, retention and disposal, documentation currency.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STAKEHOLDERS ═══════════════ -->
+  <section class="section" id="stakeholders">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">05 — Coordination</p>
+          <h2>Who does what, and where this role sits.</h2>
+        </div>
+        <p class="section-note">
+          Four parties, one information flow. The position is the hinge between the platform's engineering reality
+          and the B/Ds' operational expectations.
+        </p>
+      </header>
+
+      <div class="party-grid">
+        <article class="party reveal"><h3>Internal teams</h3><p>Product owners, infrastructure and security. Provide platform direction, hosting and risk decisions.</p></article>
+        <article class="party reveal"><h3>Contractors</h3><p>Build and support the platforms. Held to milestones, SLAs and documented acceptance criteria.</p></article>
+        <article class="party reveal"><h3>Consulting teams</h3><p>Bring specialist method — evaluation, data science, change management — for defined engagements.</p></article>
+        <article class="party reveal"><h3>Bureaux &amp; departments</h3><p>Own the service content and the user relationship. Adopt, operate and give feedback on the platform.</p></article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table raci-table">
+          <caption class="sr-only">Responsibility split across coordination activities</caption>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th><th scope="col">CSSA</th><th scope="col">Internal team</th>
+              <th scope="col">Contractor</th><th scope="col">Consulting</th><th scope="col">B/D</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Release &amp; change</td><td><span class="raci a">A</span></td><td><span class="raci r">R</span></td><td><span class="raci r">R</span></td><td><span class="raci c">C</span></td><td><span class="raci i">I</span></td></tr>
+            <tr><td>B/D onboarding</td><td><span class="raci r">R</span></td><td><span class="raci c">C</span></td><td><span class="raci c">C</span></td><td><span class="raci i">I</span></td><td><span class="raci a">A</span></td></tr>
+            <tr><td>Vendor performance</td><td><span class="raci r">R</span></td><td><span class="raci a">A</span></td><td><span class="raci i">I</span></td><td><span class="raci i">I</span></td><td><span class="raci i">I</span></td></tr>
+            <tr><td>Security assessment</td><td><span class="raci c">C</span></td><td><span class="raci a">A</span></td><td><span class="raci r">R</span></td><td><span class="raci c">C</span></td><td><span class="raci i">I</span></td></tr>
+            <tr><td>Data quality &amp; taxonomy</td><td><span class="raci r">R</span></td><td><span class="raci c">C</span></td><td><span class="raci c">C</span></td><td><span class="raci c">C</span></td><td><span class="raci a">A</span></td></tr>
+            <tr><td>Incident response</td><td><span class="raci a">A</span></td><td><span class="raci c">C</span></td><td><span class="raci r">R</span></td><td><span class="raci i">I</span></td><td><span class="raci i">I</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">R — responsible, A — accountable, C — consulted, I — informed. A working model for the role, not a published delegation of authority.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GOVERNANCE ═══════════════ -->
+  <section class="section alt" id="governance">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">06 — Governance</p>
+          <h2>Controls that travel with AI in government.</h2>
+        </div>
+        <p class="section-note">
+          Supporting AI platforms in a government context means the running system and the paperwork around it have
+          to agree with each other.
+        </p>
+      </header>
+
+      <div class="gov-grid">
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>
+          <h3>Security &amp; data classification</h3>
+          <p>Data handled by bots and analytics feeds is classified before it is ingested; controls follow the classification, not convenience.</p>
+        </article>
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>
+          <h3>Access &amp; least privilege</h3>
+          <p>Tenant roles scoped to need, recertified on a schedule, and reviewed after every join, move or departure.</p>
+        </article>
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg>
+          <h3>Records &amp; retention</h3>
+          <p>Electronic and physical files kept current, correctly named, access-controlled and disposed of on schedule.</p>
+        </article>
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-wrench" /></svg>
+          <h3>Vendor &amp; contract control</h3>
+          <p>Deliverables tied to milestones and measurable service levels, with acceptance evidence filed as it is produced.</p>
+        </article>
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-target" /></svg>
+          <h3>Model quality assurance</h3>
+          <p>Evaluation sets, drift checks and fallback behaviour reviewed before release and after any model change.</p>
+        </article>
+        <article class="gov reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-bolt" /></svg>
+          <h3>Continuity &amp; escalation</h3>
+          <p>Runbooks, contact trees and rehearsed failover paths for events where the platform simply must hold.</p>
+        </article>
+      </div>
+
+      <div class="checklist">
+        <h3>Operational checklist</h3>
+        <ul>
+          <li>Change record approved before configuration, prompt or taxonomy deployment</li>
+          <li>Rollback tested for every material release</li>
+          <li>Incident log updated through to closure, including workaround and root cause</li>
+          <li>B/D communications sent within the severity window</li>
+          <li>Access recertification completed and evidenced</li>
+          <li>Documentation and runbooks current after every change</li>
+          <li>Vendor SLA evidence collected monthly, not reconstructed at year end</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PERFORMANCE ═══════════════ -->
+  <section class="section" id="performance">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">07 — Measurement</p>
+          <h2>What “evaluate the performance” looks like in practice.</h2>
+        </div>
+        <p class="section-note">
+          Six indicators that keep a multi-tenant AI platform honest: reliability, responsiveness, onboarding speed,
+          answer quality, model quality and vendor delivery.
+        </p>
+      </header>
+
+      <div class="kpi-grid">
+        <article class="kpi reveal">
+          <span class="kpi-label">Platform availability</span>
+          <span class="kpi-value">99.5<small>%</small></span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,22 18,20 36,24 54,14 72,16 90,9 108,11 120,7" /></svg>
+          <span class="kpi-foot">Target · monthly average</span>
+        </article>
+        <article class="kpi reveal">
+          <span class="kpi-label">S1 first response</span>
+          <span class="kpi-value">≤ 15<small>min</small></span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,10 18,14 36,12 54,18 72,16 90,21 108,19 120,23" /></svg>
+          <span class="kpi-foot">Target · 95th percentile</span>
+        </article>
+        <article class="kpi reveal">
+          <span class="kpi-label">B/D onboarding</span>
+          <span class="kpi-value">≤ 20<small>d</small></span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,24 18,21 36,22 54,17 72,15 90,12 108,10 120,8" /></svg>
+          <span class="kpi-foot">Target · assess to live</span>
+        </article>
+        <article class="kpi reveal">
+          <span class="kpi-label">Bot containment</span>
+          <span class="kpi-value">≥ 70<small>%</small></span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,26 18,22 36,23 54,18 72,14 90,15 108,11 120,9" /></svg>
+          <span class="kpi-foot">Target · resolved without escalation</span>
+        </article>
+        <article class="kpi reveal">
+          <span class="kpi-label">Sentiment model F1</span>
+          <span class="kpi-value">0.82</span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,18 18,17 36,19 54,14 72,13 90,15 108,12 120,11" /></svg>
+          <span class="kpi-foot">Floor · per evaluation cycle</span>
+        </article>
+        <article class="kpi reveal">
+          <span class="kpi-label">Vendor SLA attainment</span>
+          <span class="kpi-value">≥ 95<small>%</small></span>
+          <svg class="spark" viewBox="0 0 120 32" aria-hidden="true"><polyline points="0,14 18,16 36,13 54,15 72,12 90,14 108,10 120,12" /></svg>
+          <span class="kpi-foot">Target · monthly</span>
+        </article>
+      </div>
+
+      <div class="perf-split">
+        <article class="chart-card reveal">
+          <h3>Adoption by stage</h3>
+          <p class="chart-lede">A healthy portfolio has most B/Ds in live service, with a steady pipeline behind them.</p>
+          <ul class="bars">
+            <li><span class="bar-label">Live</span><span class="bar-track"><i style="--v:34%" class="c-teal"></i></span><span class="bar-val">34%</span></li>
+            <li><span class="bar-label">Scaling</span><span class="bar-track"><i style="--v:24%" class="c-sky"></i></span><span class="bar-val">24%</span></li>
+            <li><span class="bar-label">Onboarding</span><span class="bar-track"><i style="--v:22%" class="c-indigo"></i></span><span class="bar-val">22%</span></li>
+            <li><span class="bar-label">Pilot</span><span class="bar-track"><i style="--v:14%" class="c-gold"></i></span><span class="bar-val">14%</span></li>
+            <li><span class="bar-label">Assessing</span><span class="bar-track"><i style="--v:6%" class="c-muted"></i></span><span class="bar-val">6%</span></li>
+          </ul>
+          <p class="footnote">Illustrative distribution for reporting design.</p>
+        </article>
+
+        <article class="chart-card reveal">
+          <h3>Effort mix across the brief</h3>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 42 42" role="img" aria-label="Effort mix: operations 40%, adoption 25%, coordination 20%, research 10%, records 5%">
+              <circle class="donut-ring" cx="21" cy="21" r="15.9" />
+              <circle class="donut-seg s1" cx="21" cy="21" r="15.9" stroke-dasharray="40 60" stroke-dashoffset="25" />
+              <circle class="donut-seg s2" cx="21" cy="21" r="15.9" stroke-dasharray="25 75" stroke-dashoffset="85" />
+              <circle class="donut-seg s3" cx="21" cy="21" r="15.9" stroke-dasharray="20 80" stroke-dashoffset="60" />
+              <circle class="donut-seg s4" cx="21" cy="21" r="15.9" stroke-dasharray="10 90" stroke-dashoffset="40" />
+              <circle class="donut-seg s5" cx="21" cy="21" r="15.9" stroke-dasharray="5 95" stroke-dashoffset="30" />
+            </svg>
+            <ul class="donut-legend">
+              <li><i class="s1"></i>Operations &amp; support <b>40%</b></li>
+              <li><i class="s2"></i>Adoption &amp; enablement <b>25%</b></li>
+              <li><i class="s3"></i>Coordination <b>20%</b></li>
+              <li><i class="s4"></i>Research &amp; analysis <b>10%</b></li>
+              <li><i class="s5"></i>Records &amp; administration <b>5%</b></li>
+            </ul>
+          </div>
+          <p class="footnote">Indicative split of a typical month.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ROADMAP ═══════════════ -->
+  <section class="section alt" id="roadmap">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">08 — Research &amp; roadmap</p>
+          <h2>Market watch, translated into platform work.</h2>
+        </div>
+        <p class="section-note">
+          Research is only useful if it changes something. Each theme below ends in a decision the platform team can
+          act on within the year.
+        </p>
+      </header>
+
+      <ol class="roadmap">
+        <li class="reveal">
+          <span class="rm-q">Q1</span>
+          <div>
+            <h3>Evaluation &amp; guardrails</h3>
+            <p>Build a repeatable evaluation set for both platforms and agree refusal, escalation and citation behaviour.</p>
+            <span class="rm-out">Output: evaluation harness, release gate</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="rm-q">Q2</span>
+          <div>
+            <h3>Retrieval quality</h3>
+            <p>Improve grounding of answers: chunking, metadata filters and freshness checks on approved corpora.</p>
+            <span class="rm-out">Output: retrieval benchmarks, content refresh cycle</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="rm-q">Q3</span>
+          <div>
+            <h3>Bilingual depth</h3>
+            <p>Test Traditional Chinese and English parity across intents, plus code-mixed social text handling.</p>
+            <span class="rm-out">Output: bilingual test suite, taxonomy update</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="rm-q">Q4</span>
+          <div>
+            <h3>Analytics depth</h3>
+            <p>Move from volume and sentiment to issue detection with lead time, and expose trend evidence to B/Ds.</p>
+            <span class="rm-out">Output: issue alerting playbook</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="watch">
+        <h3>On the radar</h3>
+        <ul class="watch-list">
+          <li>Agentic workflows and tool use under constrained permissions</li>
+          <li>Smaller, domain-tuned models for on-premise inference</li>
+          <li>Retrieval evaluation and citation quality as a release criterion</li>
+          <li>AI governance frameworks, model cards and audit trails</li>
+          <li>Synthetic data for evaluation where real data cannot be used</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FAQ / APPLY ═══════════════ -->
+  <section class="section" id="apply">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <p class="kicker">09 — Questions</p>
+          <h2>Before you apply.</h2>
+        </div>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>Is this a development role or a support role?</summary>
+          <p>Primarily support and operations, with development involvement. The brief covers design, implementation and testing, but the centre of gravity is keeping two live platforms running and adopted.</p>
+        </details>
+        <details>
+          <summary>Which platforms are in scope?</summary>
+          <p>Two centralised services: Chatbot-as-a-Service and the Social Media Text Analytics System. Both are shared across bureaux and departments rather than owned by a single team.</p>
+        </details>
+        <details>
+          <summary>How much vendor work is involved?</summary>
+          <p>Substantial. Contractors build and support the platforms, so a large share of the role is specifying, chasing and verifying vendor delivery against milestones and service levels.</p>
+        </details>
+        <details>
+          <summary>What does after-hours support mean in practice?</summary>
+          <p>Cover during special events, urgent deployments and live incidents, on a rota rather than permanently. Readiness checks beforehand and a clean handover afterwards are part of the expectation.</p>
+        </details>
+        <details>
+          <summary>What experience is mandatory?</summary>
+          <p>Three or more years in each of four bands: IT application development and management; system implementation and maintenance/support; management and support of government systems and services; and vendor management.</p>
+        </details>
+      </div>
+
+      <div class="cta">
+        <div>
+          <h3>Ready to support the Government's shared AI platforms?</h3>
+          <p>Prepare your submission against the four experience bands and the six requirements above — evidence beats adjectives.</p>
+        </div>
+        <a class="btn btn-primary" href="#requirements">
+          Review the requirements
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">T26</span>
+      <p>Centralised AI &amp; Data Analytics Platforms — Contract Systems Analyst role brief.</p>
+    </div>
+    <div class="footer-meta">
+      <p>Compiled from the T26 position description. Experience bands reproduce the stated minimums; performance figures are illustrative design targets, not system records.</p>
+      <p class="footer-links"><a href="#overview">Overview</a><a href="#platforms">Platforms</a><a href="#requirements">Requirements</a><a href="#apply">Apply</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
